@@ -11,9 +11,9 @@ class Band {
 
   factory Band.fromMap(Map<String, dynamic> map) {
     return Band(
-      id: map['id'] as String,
-      name: map['name'] as String,
-      votes: map['votes'] as int,
+      id: map.containsKey('id') ? map['id'] : 'no-id',
+      name: map.containsKey('name') ? map['name'] : 'no-name',
+      votes: map.containsKey('votes') ? map['votes'] : 'no-votes',
     );
   }
 }
